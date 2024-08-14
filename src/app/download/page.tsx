@@ -5,6 +5,8 @@ import AndroidIcon from "@/assets/img/android_icon.png"
 import AppleIcon from "@/assets/img/apple_icon.png"
 import WebsiteIcon from "@/assets/img/website_icon.png"
 import MockupAllDispositives from "@/assets/img/BusMe-008.png"
+import DownloadIcon from "@/assets/img/download_icon.png"
+import LinkIcon from "@/assets/img/link_icon.png"
 
 export const metadata: Metadata = {
     title: "BusMe - download",
@@ -16,7 +18,7 @@ export default function Download() {
         <>
             <div className="bg-gradient-to-t from-[#EBFFFD] to-[#FFFF]">
                 <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins">
-                    <p className="font-bold text-6xl text-center gradient-text">Descargar BusMe</p>
+                    <p className="font-bold text-6xl text-center gradient-text py-2">Descargar BusMe</p>
                     <p className="text-center text-2xl mt-14 text-muted-950">Descarga la aplicación para empezar a monitorear tus viajes
                         <br />
                         <span>¡Empieza a organizar tu tiempo!</span>
@@ -25,17 +27,26 @@ export default function Download() {
                         <BusmeDownloadButton
                             imageSrc={AndroidIcon.src}
                             initialText="Android"
-                            hoverText="Descarga"
+                            hoverText="Descargar"
+                            imageSize={{ width: '122px', height: '55px' }}
+                            iconSrc={DownloadIcon.src}
+                            iconSize={{ width: '60px', height: '60px' }}
                         />
                         <BusmeDownloadButton
                             imageSrc={AppleIcon.src}
                             initialText="iOS"
-                            hoverText="Descarga"
+                            hoverText="Descargar"
+                            imageSize={{ width: '52px', height: '63px' }}
+                            iconSrc={DownloadIcon.src}
+                            iconSize={{ width: '60px', height: '60px' }}
                         />
                         <BusmeDownloadButton
                             imageSrc={WebsiteIcon.src}
                             initialText="Website"
-                            hoverText="Abrir"
+                            hoverText="Ingresar"
+                            imageSize={{ width: '72px', height: '72px' }}
+                            iconSrc={LinkIcon.src}
+                            iconSize={{ width: '60px', height: '60px' }}
                         />
                     </div>
                     <div className="mb-8">

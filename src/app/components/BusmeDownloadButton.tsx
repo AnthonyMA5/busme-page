@@ -7,9 +7,12 @@ interface BusmeDownloadButtonProps {
   imageSrc: string;
   initialText: string;
   hoverText: string;
+  imageSize?: { width: string, height: string }; // Tamaño de la imagen (opcional)
+  iconSrc?: string; // Prop para la imagen de ícono
+  iconSize?: { width: string, height: string }; // Tamaño del icono (opcional)
 }
 
-const BusmeDownloadButton: React.FC<BusmeDownloadButtonProps> = ({ imageSrc, initialText, hoverText }) => {
+const BusmeDownloadButton: React.FC<BusmeDownloadButtonProps> = ({ imageSrc, initialText, hoverText, imageSize = { width: '64px', height: '64px' }, iconSrc, iconSize = { width: '56px', height: '56px' } }) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -25,15 +28,27 @@ const BusmeDownloadButton: React.FC<BusmeDownloadButtonProps> = ({ imageSrc, ini
             hovered ? 'transform scale-0' : 'transform scale-100'
           }`}
         >
-          <img src={imageSrc} alt="icon" className="h-16 w-16" />
+          <img src={imageSrc} alt="icon" style={{ width: imageSize.width, height: imageSize.height }} />
         </div>
 
-        {/* Icono ArrowDownTrayIcon */}
-        <ArrowDownTrayIcon
-          className={`absolute h-14 w-14 text-muted-950 transition-opacity duration-300 ease-in-out ${
-            hovered ? 'opacity-100 delay-150' : 'opacity-0'
-          }`}
-        />
+        {/* Ícono personalizado o ArrowDownTrayIcon */}
+        {iconSrc ? (
+          <img
+            src={iconSrc}
+            alt="hover-icon"
+            className={`absolute transition-opacity duration-300 ease-in-out ${
+              hovered ? 'opacity-100 delay-150' : 'opacity-0'
+            }`}
+            style={{ width: iconSize.width, height: iconSize.height }}
+          />
+        ) : (
+          <ArrowDownTrayIcon
+            className={`absolute transition-opacity duration-300 ease-in-out ${
+              hovered ? 'opacity-100 delay-150' : 'opacity-0'
+            }`}
+            style={{ width: iconSize.width, height: iconSize.height }}
+          />
+        )}
       </div>
       <div className="relative h-6 flex items-center justify-center">
         <span
