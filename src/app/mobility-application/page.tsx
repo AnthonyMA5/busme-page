@@ -7,19 +7,25 @@ export default function MobilityApplication() {
   return (
     <>
       <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins">
-        <div className="mx-auto space-y-20">
+      <h2 className="font-semibold text-5xl mb-10 bg-gradient-to-r from-[#02F8BC] via-[#0752DD] to-[#0752DD] inline-block text-transparent bg-clip-text">Optimiza{' '}<span className="text-black">tu movilidad</span></h2>
+        <p className="text-black mb-10">
+        Nuestro objetivo es ofrecerte una experiencia de viaje optima y sin retrasos. Con nuestras 
+        diversas funciones, podrás monitorear tu transporte en tiempo real, recibir alertas importantes y calificar cada 
+        uno de tus viajes, ayudándonos a mejorar continuamente. 
+        </p>
+        <div className="mx-auto space-y-20 pt-2">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-7/12 md:order-first mt-2 md:mt-0 md:pl-16">
               <Image
                 src={Busme002}
-                alt="Pantalla para calificar tu viaje"
+                alt="Pantalla de rutas"
                 width={550}
                 height={300}
                 className="rounded"
               />
             </div>
             <div className="md:w-6/12">
-              <h2 className="font-semibold text-5xl mb-10">Revisa el trayecto</h2>
+              <h2 className="font-semibold text-4xl mb-10">Revisa el trayecto</h2>
               <div className="mb-8">
                 <div className="font-medium text-2xl mb-2">Monitorea los transportes</div>
                 <p>Visualiza los vehículos en ruta y organiza tu tiempo de manera más eficiente.</p>
@@ -44,17 +50,17 @@ export default function MobilityApplication() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-7/12 md:order-last mt-2 md:mt-0 md:pl-16">
+            <div className="md:w-7/12 md:order-last mt-2 md:mt-0 md:pl-24">
               <Image
                 src={Busme003}
                 alt="Pantalla para calificar tu viaje"
-                width={550}
+                width={380}
                 height={300}
                 className="rounded"
               />
             </div>
             <div className="md:w-6/12">
-              <h2 className="font-semibold text-5xl mb-10">Califica tu viaje</h2>
+              <h2 className="font-semibold text-4xl mb-10">Califica tu viaje</h2>
               <div className="mb-8">
                 <div className="font-medium text-2xl mb-2">Valora tu viaje</div>
                 <p>Al finalizar un viaje, podrás valorar tu experiencia. Si has tenido una buena o mala experiencia, dispondrás de un espacio para dejar un comentario o sugerencia.</p>
@@ -77,14 +83,14 @@ export default function MobilityApplication() {
             <div className="md:w-7/12 md:order-first mt-2 md:mt-0 md:pl-16">
               <Image
                 src={Busme012}
-                alt="Pantalla para calificar tu viaje"
+                alt="Pantalla de inicio"
                 width={550}
                 height={300}
                 className="rounded"
               />
             </div>
             <div className="md:w-6/12">
-              <h2 className="font-semibold text-5xl mb-10">Obtén información de la ruta</h2>
+              <h2 className="font-semibold text-4xl mb-10">Obtén información de la ruta</h2>
               <div className="mb-8">
                 <div className="font-medium text-2xl mb-2">Disfruta de la información en tiempo real</div>
                 <p>Obtén datos actualizados sobre la llegada del transporte desde el punto A hasta el punto B.</p>
@@ -97,7 +103,7 @@ export default function MobilityApplication() {
                 <div className="font-medium text-2xl mb-2">Consulta los transportes</div>
                 <p>Revisa todos los transportes y sus horarios. Hay que tener en cuenta que el equipo de administración puede actualizar esta información.</p>
               </div>
-              <div className="mb-8">
+              <div className="">
                 <div className="font-medium text-2xl mb-2">Nunca te pierdas un transporte</div>
                 <p>Recibe notificaciones automáticas sobre la llegada del transporte a los puntos de abordaje, para que siempre estés informado.</p>
               </div>

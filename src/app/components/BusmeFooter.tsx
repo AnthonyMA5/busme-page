@@ -1,6 +1,7 @@
 'use client'
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline"
-import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function BusmeFooter() {
@@ -11,36 +12,26 @@ export default function BusmeFooter() {
      return null;
    }
 
-  return (
-    <footer className="border border-r-white border-l-white border-b-white border-t-muted-800 py-20 font-poppins">
-      <div className="container mx-auto px-16">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-2xl font-medium text-muted-950">¿Estás listo?</p>
-            <Link href="/download" passHref>
-              <button
-                type="button"
-                className="flex rounded-md mt-6 bg-primary-50 p-1 px-2 text-primary-700 hover:text-primary-300 transition duration-300 sm:p-2 sm:px-4"
-              >
-                <span className="flex" />
-                <span className='font-poppins font-light '>Descargar</span>
-                <ArrowLongRightIcon className="h-6 w-5 ml-2" />
-              </button>
-            </Link>
-          </div>
-          <div>
-            <ul className="flex space-x-8 text-muted-950 text-xl">
-              <li><Link href="/" className="hover:underline">Inicio</Link></li>
-              <li><Link href="/about" className="hover:underline">Acerca de</Link></li>
-              <li><Link href="#" className="hover:underline">Política de privacidad</Link></li>
-              <li><Link href="#" className="hover:underline">Términos y Condiciones</Link></li>
-            </ul>
-          </div>
+   return (
+    <footer className="border-2 border-l-transparent border-r-transparent border-b-transparent border-t-muted-600 py-16 font-poppins">
+      <div className="container mx-auto px-8 text-center">
+        <h2 className="text-3xl font-semibold text-primary-950">¡Conéctate con nosotros!</h2>
+        <p className="text-muted-800 mt-4">Síguenos en nuestras redes sociales para estar al tanto de todas las novedades.</p>
+        
+        <div className="flex justify-center space-x-6 mt-8">
+          <Link href="https://www.facebook.com" aria-label="Facebook">
+            <FontAwesomeIcon icon={faFacebookF} className="h-8 w-8 text-muted-900 hover:text-primary-600 transition duration-300" />
+          </Link>
+          <Link href="https://www.twitter.com" aria-label="X">
+            <FontAwesomeIcon icon={faXTwitter} className="h-8 w-8 text-muted-900 hover:text-primary-600 transition duration-300" />
+          </Link>
+          <Link href="https://www.github.com" aria-label="GitHub">
+            <FontAwesomeIcon icon={faGithub} className="h-8 w-8 text-muted-900 hover:text-primary-600 transition duration-300" />
+          </Link>
         </div>
-        <div className="mt-16 text-center text-muted-950">
-          <p>&copy; 2024 BusMe. Todos los derechos reservados.</p>
-        </div>
+        
+        <p className="mt-10 text-muted-950">&copy; 2024 BusMe. Todos los derechos reservados.</p>
       </div>
     </footer>
-  )
+  );
 }

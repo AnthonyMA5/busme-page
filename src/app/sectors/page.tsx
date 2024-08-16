@@ -29,10 +29,9 @@ export default function Sectors() {
               <li><span className="font-bold">Aumenta la productividad:</span> Reduce los tiempos de espera y mejora la puntualidad, lo que se traduce en una mayor eficiencia operativa.</li>
               <li><span className="font-bold">Mejora la experiencia de los Empleados:</span> Ofrece un transporte más seguro y confiable, mejorando la satisfacción y el bienestar de los empleados.</li>
               <li><span className="font-bold">Optimiza recursos:</span> Minimiza los costos operativos al ajustar las rutas y gestionar la capacidad de los vehículos de manera más efectiva.</li>
-              <li><span className="font-bold">Atractivo para el talento:</span> Proporciona beneficios de movilidad que ayudan a atraer y retener talento, ofreciendo soluciones de transporte modernas y efectivas.</li>
             </ul>
           </div>
-          <div className="md:w-5/12 md:order-first mt-4">
+          <div className="md:w-5/12 md:order-first mt-2">
             <Image
               src={SectorEmpresa}
               alt="Pantalla para calificar tu viaje"
@@ -60,7 +59,7 @@ export default function Sectors() {
               <li><span className="font-bold">Reducción de congestión:</span> Minimiza los atascos dentro y alrededor del instituto, mejorando la circulación y reduciendo la necesidad de espera.</li>
             </ul>
           </div>
-          <div className="md:w-5/12 md:order-last mt-4">
+          <div className="md:w-5/12 md:order-last mt-5">
             <Image
               src={SectorInstituto}
               alt="Pantalla para calificar tu viaje"
