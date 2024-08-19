@@ -40,7 +40,7 @@ export default function BusmeNavbar() {
                             className="h-6 w-auto sm:h-10 sm:w-auto"
                         />
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+                    <div className="flex flex-1 items-center text-center justify-center sm:items-stretch sm:justify-center">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex items-center space-x-4">
                                 {navigation.map((item) => {

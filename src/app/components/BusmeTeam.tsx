@@ -11,8 +11,8 @@ interface TeamMember {
   
   const BusmeTeam: React.FC<TeamProps> = ({ members }) => {
     return (
-      <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins">
-        <h2 className="font-medium text-5xl mb-10 text-center text-complementary-900">Nuestro equipo</h2>
+      <div className="mx-auto max-w-7xl py-8 sm:px-6 lg:px-8 font-poppins">
+        <h2 className="font-medium text-4xl sm:text-5xl mb-10 text-center text-complementary-900">Nuestro equipo</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {members.map((member, index) => (
             <div key={index} className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">

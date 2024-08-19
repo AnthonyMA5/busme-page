@@ -1,12 +1,19 @@
 import Image from "next/image";
 import SectorEmpresa from "@/assets/img/sector_empresas.jpg"
 import SectorInstituto from "@/assets/img/sector_estudiantil.png"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "BusMe - Sectores",
+  description: "BusMe next app",
+};
 
 export default function Sectors() {
   return (
-    <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins">
-      <h2 className="font-semibold text-5xl mb-10 bg-gradient-to-r from-[#02F8BC] via-[#0752DD] to-[#0752DD] inline-block text-transparent bg-clip-text">Sectores{' '}<span className="text-black">de aplicación</span></h2>
-      <p className="text-black mb-10">
+    <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins px-4">
+      <h2 className="title-page">
+        Sectores{' '}<span className="text-black">de aplicación</span></h2>
+      <p className="text-black mb-12">
         Busme proporciona soluciones de Movilidad como Servicio para ayudar tanto a estudiantes como a trabajadores,
         nuestra aplicación de monitoreo de transporte abarca empresas medianas y grandes que dispongan de transporte
         de personal en la Zona Metropolitana de Guadalajara (ZMG), así como instituciones educativas de nivel medio y/o
@@ -15,26 +22,26 @@ export default function Sectors() {
 
       <div className="mx-auto space-y-24 py-5">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-7/12 ml-16">
-            <p className="font-semibold text-4xl mb-6">
+          <div className="md:w-7/12 ml-0 md:ml-16">
+            <p className="font-semibold text-3xl sm:text-4xl mb-6 sm:mb-10">
               Sector empresarial
             </p>
-            <p className="text-2xl font-medium mb-4">
+            <p className="font-medium text-xl sm:text-2xl mb-4">
               Optimiza el transporte corporativo
             </p>
             <p className="mb-4">
               BusMe ofrece soluciones avanzadas de monitoreo para empresas medianas y grandes en la Zona Metropolitana de Guadalajara, ayudándote a transformar la gestión del transporte de personal.
             </p>
-            <ul className="list-disc mt-4 ml-5 space-y-2">
+            <ul className="list-disc mb-4 ml-5 space-y-2">
               <li><span className="font-bold">Aumenta la productividad:</span> Reduce los tiempos de espera y mejora la puntualidad, lo que se traduce en una mayor eficiencia operativa.</li>
               <li><span className="font-bold">Mejora la experiencia de los Empleados:</span> Ofrece un transporte más seguro y confiable, mejorando la satisfacción y el bienestar de los empleados.</li>
               <li><span className="font-bold">Optimiza recursos:</span> Minimiza los costos operativos al ajustar las rutas y gestionar la capacidad de los vehículos de manera más efectiva.</li>
             </ul>
           </div>
-          <div className="md:w-5/12 md:order-first mt-2">
+          <div className="md:w-5/12 md:order-first">
             <Image
               src={SectorEmpresa}
-              alt="Pantalla para calificar tu viaje"
+              alt="Imagen del sector empresarial"
               
               className="rounded"
             />
@@ -43,10 +50,10 @@ export default function Sectors() {
 
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-7/12 mr-16">
-            <p className="font-semibold text-4xl mb-6">
+            <p className="font-semibold text-3xl sm:text-4xl mb-6 sm:mb-10">
               Sector educativo
             </p>
-            <p className="text-2xl font-medium mb-4">
+            <p className="font-medium text-xl sm:text-2xl mb-4">
               Transporte eficientes y seguras para estudiantes
             </p>
             <p className="mb-4">
@@ -62,7 +69,7 @@ export default function Sectors() {
           <div className="md:w-5/12 md:order-last mt-5">
             <Image
               src={SectorInstituto}
-              alt="Pantalla para calificar tu viaje"
+              alt="Imagen del sector estudiantil"
               
               className="rounded"
             />
