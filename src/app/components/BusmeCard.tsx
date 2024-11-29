@@ -1,4 +1,5 @@
 import { FC, } from 'react'
+// @ts-ignore
 import { IconType } from '@heroicons/react/20/solid';
 
 interface CardProps {
