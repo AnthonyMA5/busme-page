@@ -11,77 +11,18 @@ import Busme011 from "@/assets/img/BusMe-011.png";
 import { Metadata } from "next";
 import { useEffect } from "react";
 
-function urlBase64ToUint8Array(base64String: string) {
-  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
-  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
-}
-
 export default function Home() {
-  useEffect(() => {
-    if ("serviceWorker" in navigator && "PushManager" in window) {
-      registerServiceWorker();
-    }
-  }, []);
+  let db = window.indexedDB.open("database");
 
-  async function registerServiceWorker() {
-    try {
-      // Registra el Service Worker
-      await navigator.serviceWorker.register("/sw.js", {
-        scope: "/",
-        updateViaCache: "none",
-      });
+  db.onupgradeneeded = (event) => {
+    // Afirmación de tipo, asegurando que event.target es un IDBOpenDBRequest
+    let result = (event.target as IDBOpenDBRequest).result;
+    result.createObjectStore("usuarios", {
+      keyPath: "id",
+      autoIncrement: true,
+    });
+  };
 
-      // Espera a que el Service Worker esté listo
-      const registration = await navigator.serviceWorker.ready;
-
-      // Intenta obtener una suscripción existente
-      let sub = await registration.pushManager.getSubscription();
-
-      if (!sub) {
-        // Si no existe una suscripción, crea una nueva
-        sub = await subscribeToPush(registration);
-      }
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          suscripcion: sub.toJSON(),
-          userId: sessionStorage.getItem("userId") || null,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          const { userId } = data;
-          sessionStorage.setItem("userId", userId);
-        })
-        .catch((err) => console.error(err));
-    } catch (error) {
-      console.error("Error registering Service Worker:", error);
-    }
-  }
-
-  async function subscribeToPush(registration: ServiceWorkerRegistration) {
-    try {
-      const sub = await registration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(
-          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!
-        ),
-      });
-      return sub;
-    } catch (error) {
-      console.error("Error subscribing to push notifications:", error);
-      throw error;
-    }
-  }
   return (
     <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins px-4">
       <div className="flex flex-col md:flex-row items-center mb-16 space-y-8 md:space-y-0">
