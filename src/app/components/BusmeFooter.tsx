@@ -11,8 +11,6 @@ interface SyncManager {
   getTags(): Promise<string[]>;
 }
 
-
-
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
@@ -217,8 +215,8 @@ export default function BusmeFooter() {
   return (
     <footer className=" py-16 font-poppins bg-primary-600">
       <div className="container mx-auto px-8 text-center">
-        <h2 className="text-4xl font-bold text-white">¡Monitorea tus viajes!</h2>
-        <p className="text-white mt-4">Registrate para obtener más información acerca de BusMe.</p>
+        <h2 className="text-4xl font-bold text-white">¡Suscríbete para conocer más sobre BusMe!</h2>
+        <p className="text-white mt-4">Suscríbete para recibir novedades y avisos importantes. ¡Mantente al día con todo lo que BusMe tiene para ofrecer!</p>
         {/* <p className="text-white mt-4">Síguenos en nuestras redes sociales para estar al tanto de todas las novedades.</p> */}
         {/* 
         <div className="flex justify-center space-x-6 mt-8">
@@ -234,7 +232,7 @@ export default function BusmeFooter() {
         </div> */}
 
         <form onSubmit={handleSubmit}>
-          <div className="flex justify-center space-x-6 mt-8">
+          <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 sm:flex-nowrap mt-8">
             <div>
               <div className="mt-2">
                 <input
@@ -281,7 +279,7 @@ export default function BusmeFooter() {
                 className="w-full mt-2 justify-center rounded-md bg-secondary border-2 border-secondary px-5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-white hover:text-primary-600 hover:border-2 hover:border-secondary transition duration-500 ease-in-out py-1"
                 type="submit"
               >
-                Crear cuenta
+                Suscríbete
               </button>
             </div>
           </div>

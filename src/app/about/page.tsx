@@ -1,5 +1,5 @@
 import BusmeTeam from "../components/BusmeTeam";
-import CatNerd from "@/assets/img/CatNerd.jpeg"
+import BusMe from "@/assets/img/busme-logo.jpeg"
 import CatNerd2 from "@/assets/img/CatNerd2.jpeg"
 import CatNerd3 from "@/assets/img/CatNerd3.jpg"
 import DogNerd from "@/assets/img/DogeNerd.jpeg"
@@ -14,22 +14,22 @@ const teamMembers = [
   {
     name: 'Anthony Martínez Arellano',
     role: 'Gerente de Proyecto',
-    imageSrc: CatNerd.src,
+    imageSrc: BusMe.src,
   },
   {
     name: 'Angélica Araceli Silva Palmas',
     role: 'Diseñador UI',
-    imageSrc: CatNerd2.src,
+    imageSrc: BusMe.src,
   },
   {
     name: 'Cristopher Yahir Alvarado Mombela',
     role: 'Administrador de BD',
-    imageSrc: CatNerd3.src,
+    imageSrc: BusMe.src,
   },
   {
     name: 'Braulio Israel Fernandez Marquez',
     role: 'Desarrollador Full-Stack',
-    imageSrc: DogNerd.src,
+    imageSrc: BusMe.src,
   },
 ];
 
@@ -41,7 +41,7 @@ export default function About() {
         Proyecto especializado en el monitoreo de transporte mediante un sistema
         avanzado, diseñado para mejorar la experiencia de los usuarios y optimizar la
         gestión del servicio de transporte.</p>
-      <p className="font-medium text-2xl sm:text-3xl text-complementary-900 mb-2">
+      <p className="font-medium text-2xl sm:text-3xl text-black mb-2">
         ¿Quiénes somos?
       </p>
       <p className="mb-8">
@@ -50,7 +50,7 @@ export default function About() {
         a los usuarios de transporte privado y escolar tener acceso a información precisa y en tiempo real, mejorando su
         experiencia de viaje.
       </p>
-      <p className="font-medium text-2xl sm:text-3xl text-complementary-900 mb-2">
+      <p className="font-medium text-2xl sm:text-3xl text-black mb-2">
         Nuestra misión
       </p>
       <p className="mb-8">
@@ -59,14 +59,14 @@ export default function About() {
         Nos enfocamos en proporcionar métricas e informes para que nuestros usuarios puedan mejorar continuamente sus servicios
         de transporte, impulsando su éxito y crecimiento.
       </p>
-      <p className="font-medium text-2xl sm:text-3xl text-complementary-900 mb-2">
+      <p className="font-medium text-2xl sm:text-3xl text-black mb-2">
         Nuestra visión
       </p>
       <p className="mb-8">
         Ser líderes en la implementación de soluciones tecnológicas innovadoras que proporcionen una experiencia de transporte
         segura, eficiente y cómoda para todos nuestros usuarios.
       </p>
-      <p className="font-medium text-2xl sm:text-3xl text-complementary-900 mb-2">
+      <p className="font-medium text-2xl sm:text-3xl text-black mb-2">
         Cómo empezó todo
       </p>
       <p className="mb-8">
@@ -74,7 +74,7 @@ export default function About() {
         utilizar el transporte público. Como estudiantes, entendemos estos desafíos y nos propusimos crear una solución que no 
         solo mejore la puntualidad y eficiencia, sino que también ofrezca una experiencia más cómoda y segura para todos.
       </p>
-      <p className="font-medium text-2xl sm:text-3xl text-complementary-900 mb-2">
+      <p className="font-medium text-2xl sm:text-3xl text-black mb-2">
         Nuestro compromiso
       </p>
       <p className="mb-8">
