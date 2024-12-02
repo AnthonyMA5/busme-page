@@ -5,6 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { stringify } from "querystring";
+// Agrega esta declaración al inicio de tu archivo o en un archivo de tipos globales.
+interface SyncManager {
+  register(tag: string): Promise<void>;
+  getTags(): Promise<string[]>;
+}
+
+
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -129,10 +136,20 @@ export default function BusmeFooter() {
           guardarEnIndexedDB(name, lastname, email);
   
           if ('serviceWorker' in navigator && 'SyncManager' in window) {
-              navigator.serviceWorker.ready.then(sw => {
-                  return sw.sync.register('sync-usuarios');
-              }).catch(err => console.log('Error registrando el sync:', err));
-          }
+            navigator.serviceWorker.ready.then(sw => {
+                const syncManager = (sw as ServiceWorkerRegistration & { sync?: SyncManager }).sync;
+        
+                if (syncManager) { // Verifica si sync está disponible
+                    return syncManager.register('sync-usuarios');
+                } else {
+                    console.log('El navegador no soporta SyncManager.');
+                }
+            }).catch(err => console.log('Error al preparar el Service Worker:', err));
+        } else {
+            console.log('SyncManager no está soportado en este navegador.');
+        }
+        
+        
           return;
       }
       })
