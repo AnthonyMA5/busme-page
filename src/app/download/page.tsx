@@ -36,7 +36,7 @@ export default function Download() {
                         <BusmeDownloadButton
                             imageSrc={AppleIcon.src}
                             initialText="iOS"
-                            hoverText="Descargar"
+                            hoverText="Próximamente"
                             imageSize={{ width: '52px', height: '63px' }}
                             iconSrc={DownloadIcon.src}
                             iconSize={{ width: '60px', height: '60px' }}
