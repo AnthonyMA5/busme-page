@@ -59,7 +59,7 @@ self.addEventListener('notificationclick', function (event) {
 })
 
 self.addEventListener('fetch', event => {
-    if (event.request.url.includes('http://localhost:4000/api/users/create-user')) {
+    if (event.request.url.includes('https://busme-info-server-production.up.railway.app/api/users/create-user')) {
         event.respondWith(
             fetch(event.request).catch(() => {
                 if ('SyncManager' in self) {
@@ -102,7 +102,7 @@ function procesarRegistros(result) {
           let currentValue = cursor.value;
 
           // Enviar los datos a la API
-          fetch('http://localhost:4000/api/users/create-user', {
+          fetch('https://busme-info-server-production.up.railway.app/api/users/create-user', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -112,7 +112,6 @@ function procesarRegistros(result) {
           .then(response => response.json())
           .then(data => {
               console.log('Datos enviados con éxito:', data);
-                localStorage.setItem('user', JSON.stringify(data.user))
               // Abrir una nueva transacción para eliminar el registro
               let deleteTransaction = result.transaction('usuarios', 'readwrite');
               let deleteStore = deleteTransaction.objectStore('usuarios');

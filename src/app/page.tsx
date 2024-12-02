@@ -12,16 +12,32 @@ import { Metadata } from "next";
 import { useEffect } from "react";
 
 export default function Home() {
-  let db = window.indexedDB.open("database");
 
-  db.onupgradeneeded = (event) => {
-    // Afirmación de tipo, asegurando que event.target es un IDBOpenDBRequest
-    let result = (event.target as IDBOpenDBRequest).result;
-    result.createObjectStore("usuarios", {
-      keyPath: "id",
-      autoIncrement: true,
-    });
-  };
+useEffect(() => {
+    // Verificar si estamos en el cliente
+    if (typeof window !== "undefined") {
+        const db = window.indexedDB.open("database");
+
+        db.onupgradeneeded = (event) => {
+            const result = (event.target as IDBOpenDBRequest).result;
+            result.createObjectStore("usuarios", {
+                keyPath: "id",
+                autoIncrement: true,
+            });
+        };
+
+        db.onsuccess = () => {
+            console.log("Base de datos abierta con éxito");
+        };
+
+        db.onerror = (event) => {
+            console.error("Error al abrir la base de datos:", event);
+        };
+    } else {
+        console.error("IndexedDB no está disponible en este entorno.");
+    }
+}, []);
+
 
   return (
     <div className="mx-auto max-w-7xl py-16 sm:px-6 lg:px-8 font-poppins px-4">

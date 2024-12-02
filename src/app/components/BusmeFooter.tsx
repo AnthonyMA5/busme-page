@@ -29,7 +29,13 @@ export default function BusmeFooter() {
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
-  const [isLogued, setIsLogued] = useState(localStorage.getItem("user") ? true : false);
+  const [isLogued, setIsLogued] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && localStorage.getItem("user")) {
+        setIsLogued(true);
+    }
+}, []);
 
   useEffect(() => {
     // Registra el Service Worker al renderizar
