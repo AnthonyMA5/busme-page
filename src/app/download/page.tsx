@@ -31,6 +31,7 @@ export default function Download() {
                             imageSize={{ width: '122px', height: '55px' }}
                             iconSrc={DownloadIcon.src}
                             iconSize={{ width: '60px', height: '60px' }}
+                            linkHref="https://play.google.com/store/apps/details?id=com.innovatech.busme_android"
                         />
                         <BusmeDownloadButton
                             imageSrc={AppleIcon.src}
